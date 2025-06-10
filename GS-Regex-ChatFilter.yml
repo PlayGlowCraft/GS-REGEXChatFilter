@@ -5,7 +5,7 @@
 #isn't blocked or a word that is blocked and shouldn't feel free to let me know. This is    #
 #setup to use ChatFilter. If you would like to see a diffrent setup for other plugins       #
 #let me know and i will try to assist.                                                      #
-#V2.3                                                                                       #
+#V2.4                                                                                       #
 #############################################################################################
 # Place this filter under categories in filter.yml
   GS-Regex:
@@ -80,7 +80,7 @@
 # Blocks 'areole'
       - (?i)[^a-zA-Z0-9]?(a+(\W|\d|_)*r+(\W|\d|_)*e+(\W|\d|_)*o+(\W|\d|_)*l+(\W|\d|_)*e+(\W|\d|_)*)(?!\w)
 # Blocks 'arian'
-      - (?i)[^a-zA-Z0-9]?(a+(\W|\d|_)*r+(\W|\d|_)*i+(\W|\d|_)*a+(\W|\d|_)*n+(\W|\d|_)*)(?!\w)
+      - (?i)(?<![a-zA-Z])a+(\W|\d|_)*r+(\W|\d|_)*i+(\W|\d|_)*a+(\W|\d|_)*n+(?![a-zA-Z])
 # Blocks 'arrse'
       - (?i)[^a-zA-Z0-9]?(a+(\W|\d|_)*r+(\W|\d|_)*r+(\W|\d|_)*s+(\W|\d|_)*e+(\W|\d|_)*)(?!\w)
 # Blocks 'arse'
@@ -2120,9 +2120,7 @@
 # Blocks 'n1gga'
       - (?i)[^a-zA-Z0-9]?(n+(\W|\d|_)*1+(\W|\d|_)*g+(\W|\d|_)*g+(\W|\d|_)*a+(\W|\d|_)*)(?!\w)
 # Blocks 'nad'
-      - (?i)[^a-zA-Z0-9]?(n+(\W|\d|_)*a+(\W|\d|_)*d+(\W|\d|_)*)(?!\w)
-# Blocks 'nads'
-      - (?i)[^a-zA-Z0-9]?(n+(\W|\d|_)*a+(\W|\d|_)*d+(\W|\d|_)*s+(\W|\d|_)*)(?!\w)
+      - (?i)(?<![a-zA-Z])n[\W\d_]*(a|4|@)[\W\d_]*d([\W\d_]*(s|5))?(?![a-zA-Z])
 # Blocks 'naked'
       - (?i)[^a-zA-Z0-9]?(n+(\W|\d|_)*a+(\W|\d|_)*k+(\W|\d|_)*e+(\W|\d|_)*d+(\W|\d|_)*)(?!\w)
 # Blocks 'nambla'
@@ -2383,6 +2381,8 @@
       - (?i)[^a-zA-Z0-9]?(p+(\W|\d|_)*l+(\W|\d|_)*a+(\W|\d|_)*y+(\W|\d|_)*b+(\W|\d|_)*o+(\W|\d|_)*y+(\W|\d|_)*)(?!\w)
 # Blocks 'pleasurechest'
       - (?i)[^a-zA-Z0-9]?(p+(\W|\d|_)*l+(\W|\d|_)*e+(\W|\d|_)*a+(\W|\d|_)*s+(\W|\d|_)*u+(\W|\d|_)*r+(\W|\d|_)*e+(\W|\d|_)*c+(\W|\d|_)*h+(\W|\d|_)*e+(\W|\d|_)*s+(\W|\d|_)*t+(\W|\d|_)*)(?!\w)
+# Blocks 'pmo'
+      - (?i)(?<![a-zA-Z])p+(\W|\d|_)*m+(\W|\d|_)*o+(?![a-zA-Z])
 # Blocks 'polack'
       - (?i)[^a-zA-Z0-9]?(p+(\W|\d|_)*o+(\W|\d|_)*l+(\W|\d|_)*a+(\W|\d|_)*c+(\W|\d|_)*k+(\W|\d|_)*)(?!\w)
 # Blocks 'polesmoker'
@@ -2859,6 +2859,8 @@
       - (?i)[^a-zA-Z0-9]?(s+(\W|\d|_)*w+(\W|\d|_)*a+(\W|\d|_)*s+(\W|\d|_)*t+(\W|\d|_)*i+(\W|\d|_)*k+(\W|\d|_)*a+(\W|\d|_)*)(?!\w)
 # Blocks 'swinger'
       - (?i)[^a-zA-Z0-9]?(s+(\W|\d|_)*w+(\W|\d|_)*i+(\W|\d|_)*n+(\W|\d|_)*g+(\W|\d|_)*e+(\W|\d|_)*r+(\W|\d|_)*)(?!\w)
+# Blocks 'sybau'
+      - (?i)[^a-zA-Z0-9]?s+(\W|\d|_)*y+(\W|\d|_)*b+(\W|\d|_)*a+(\W|\d|_)*u+(\W|\d|_)*(?!\w)
 # Blocks 'taff'
       - (?i)(^|[^a-zA-Z0-9])t+(\W|_|\d)*a+(\W|_|\d)*f+(\W|_|\d)*f+(\W|_|\d)*(?!\w)
 # Blocks 'taig'
@@ -2920,9 +2922,9 @@
 # Blocks 'tities'
       - (?i)[^a-zA-Z0-9]?(t+(\W|\d|_)*i+(\W|\d|_)*t+(\W|\d|_)*i+(\W|\d|_)*e+(\W|\d|_)*s+(\W|\d|_)*)(?!\w)
 # Blocks 'tits'
-      - (?i)(?<![a-z0-9])t+(\W|\d|_)*i+(\W|\d|_)*t+(\W|\d|_)*s+(?![a-z0-9])
+      - (?i)(?<![a-zA-Z0-9])t[\W\d_]*i[\W\d_]*t(?![a-zA-Z0-9])
 # Blocks 'titt'
-      - (?i)[^a-zA-Z0-9]?(t+(\W|\d|_)*i+(\W|\d|_)*t+(\W|\d|_)*t+(\W|\d|_)*)(?!\w)
+      - (?i)(?<![a-zA-Z0-9])t[\W\d_]*i[\W\d_]*t[\W\d_]*t?[\W\d_]*s(?![a-zA-Z0-9])
 # Blocks 'tittie5'
       - (?i)[^a-zA-Z0-9]?(t+(\W|\d|_)*i+(\W|\d|_)*t+(\W|\d|_)*t+(\W|\d|_)*i+(\W|\d|_)*e+(\W|\d|_)*5+(\W|\d|_)*)(?!\w)
 # Blocks 'tittiefucker'
